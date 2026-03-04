@@ -24,12 +24,8 @@ This project implements an end-to-end germline variant discovery workflow follow
 │   ├── 1-variant-calling.sh
 │   ├── 2-variant-filtering-annotation.sh
 ├── results/
-│   ├── raw_variants.vcf
-│   ├── filtered_snps.vcf
-│   ├── filtered_indels.vcf
-│   ├── analysis-ready-snps.vcf
-│   ├── analysis-ready-indels.vcf
-│   └── output_snps.table
+│   ├── example_snps_small.vcf
+│   ├── example_indels_small.vcf
 ├── docs/
 │   └── methodology.md
 └── README.md
@@ -49,6 +45,10 @@ Total Variants: [1,067,473]
 SNP Count: [946,560]
 INDEL Count: [120,913]
 ```
+## Workflow Diagram
+<p align="center">
+  <img src="results/human-germline-variant-calling-pipeline.drawio.png" width="600">
+</p>  
 
 ## Discussions
 This project demonstrates implementation of a complete germline variant discovery workflow following GATK Best Practices, from raw FASTQ files to annotated and filtered VCF outputs. Quality control indicated strong mapping performance with 99.66% mapped. Because the input FASTQ files were pre-filtered, the overall coverage rate is lower than standards.  
