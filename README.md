@@ -21,8 +21,8 @@ This project implements an end-to-end germline variant discovery workflow follow
 ## File Structure
 ```
 ├── scripts/
-│   ├── variant-calling.sh
-│   ├── variant-filtering-annotation.sh
+│   ├── 1-variant-calling.sh
+│   ├── 2-variant-filtering-annotation.sh
 ├── results/
 │   ├── raw_variants.vcf
 │   ├── filtered_snps.vcf
