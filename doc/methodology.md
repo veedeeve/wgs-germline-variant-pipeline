@@ -34,6 +34,22 @@ Using **GATK** to recalibrate base quality score and apply the model
 gatk BaseRecalibrator -I SRR062634_sorted_dedup_reads.bam -R hg38.fa --known-sites Homo_sapiens_assembly38.dbsnp138.vcf.gz -O recal_data.table
 gatk ApplyBQSR -I SRR062634_sorted_dedup_reads.bam -R hg38.fa --bqsr-recal-file recal_data.table -O SRR062634_sorted_dedup_bqsr_reads.bam
 ```
+## 5) Collect Alignment and Insert Size Metrics
+```bash
+gatk CollectAlignmentSummaryMetrics R=hg38.fa I=SRR062634_sorted_dedup_bqsr_reads.bam O=alignment_metrics.txt
+gatk CollectInsertSizeMetrics INPUT=SRR062634_sorted_dedup_bqsr_reads.bam OUTPUT=insert_size_metrics.txt HISTOGRAM_FILE=insert_size_histogram.pdf
+```
+
+## 6) Call Variants
+```bash
+gatk HaplotypeCaller -R hg38.fa -I SRR062634_sorted_dedup_bqsr_reads.bam -O raw_variants.vcf
+```
+## 7) Extract SNPS and INDELS
+```bash
+gatk SelectVariants -R hg38.fa -V raw_variants.vcf --select-type SNP -O raw_snps.vcf
+gatk SelectVariants -R hg38.fa -V raw_variants.vcf --select-type INDEL -O raw_indels.vcf
+```
+
 
 
 
