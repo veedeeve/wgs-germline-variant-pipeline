@@ -53,6 +53,9 @@ Top Genes with Variant Count:
     123 - KMT2C
     66 - CR392039
 ```
+
+Functional annotation revealed that majority of detected variants were located in non-coding regions of the genome. The largest category was intergenic variants (n = 6130), followed by RNA-associated variants (n = 622) and intronic variants (n = 250). Gene-level analysis revealed that several genes contained multiple variants. The gene BAGE2 had the highest number of vairants (n = 322), followed by KMT2C (n = 123).
+
 ## Workflow Diagram
 <p align="center">
   <img src="results/human-germline-variant-calling-pipeline.drawio.png" width="600">
