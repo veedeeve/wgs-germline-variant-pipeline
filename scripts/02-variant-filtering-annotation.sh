@@ -100,5 +100,9 @@ cat ${results}/analysis-ready-snps-filteredGT-funcocated.vcf | grep "Funcotation
 # Obtain lines for gene: NBF1
 cat ${results}/output_snps.table | cut -f 5 | grep "NBPF1" | sed 's/|/\t/g' >> ${results}/output_curated_variants.txt
 
+# Count annotation classes
+tail -n +2 output_snps.table | cut -f5 | cut -d"|" -f6 | sort | uniq -c | sort -nr | head -20
 
+# Count variants per gene
+tail -n +2 output_snps.table | grep -v "|IGR|" | cut -f5 | cut -d"|" -f1 | sed 's/\[//' | sort | uniq -c | sort -nr | head
 
