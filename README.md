@@ -44,6 +44,10 @@ Mapped Reads: 99.66%
 Total Variants: [1,067,473]
 SNP Count: [946,560]
 INDEL Count: [120,913]
+Top Genes with Variant Count:
+    322 - BAGE2
+    123 - KMT2C
+    66 - CR392039
 ```
 ## Workflow Diagram
 <p align="center">
