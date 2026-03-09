@@ -44,6 +44,10 @@ Mapped Reads: 99.66%
 Total Variants: [1,067,473]
 SNP Count: [946,560]
 INDEL Count: [120,913]
+Top Annotation Class:
+    6130 - IGR
+    622 - RNA
+    250 - Intron
 Top Genes with Variant Count:
     322 - BAGE2
     123 - KMT2C
