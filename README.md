@@ -3,12 +3,16 @@
 ## Project Overview
 This project implements an end-to-end germline variant discovery workflow following GATK Best Practices. The pipeline processes human whole genome sequencing (WGS) data from raw FASTQ files through alignment, base quality score recalibration (BQSR), variant calling, hard filtering, and functional annotation.
 
+---
+
 ## Objective
 - Perform high-confidence germline SNP and INDEL discovery from human WGS data
 - Apply site-level and genotype-level quality filtering
 - Annotate variants with gene-level functional information
 - Generate structured outputs for interpretation and evaluation
 - Demonstrate implementation of GATK Best Practices in a reproducible pipeline
+
+---
 
 ## Key Findings
 - Successfully implemented a complete germline variant calling workflow using GATK4
@@ -18,20 +22,26 @@ This project implements an end-to-end germline variant discovery workflow follow
 - Annotated variants using Funcotator to extract gene-level information (e.g., NBPF1)
 - Produced tab-delimited variant tables suitable for downstream biological analysis
 
+---
+
 ## File Structure
 ```
-├── scripts/
-│   ├── 1-variant-calling.sh
-│   ├── 2-variant-filtering-annotation.sh
+├── data/
 ├── results/
 │   ├── example_snps_small.vcf
 │   ├── example_indels_small.vcf
+├── scripts/
+│   ├── 01-variant-calling.sh
+│   ├── 02-variant-filtering-annotation.sh
 ├── docs/
 │   └── methodology.md
 └── README.md
 ```
 
+---
+
 ## Results
+
 The pipeline produced:
 - Raw variant calls (SNPs and INDELs) from HaplotypeCaller
 - Site-level filtered variant sets using GATK hard-filter thresholds
@@ -56,11 +66,17 @@ Top Genes with Variant Count:
 
 Functional annotation revealed that majority of detected variants were located in non-coding regions of the genome. The largest category was intergenic variants (n = 6130), followed by RNA-associated variants (n = 622) and intronic variants (n = 250). Gene-level analysis revealed that several genes contained multiple variants. The gene BAGE2 had the highest number of vairants (n = 322), followed by KMT2C (n = 123).
 
-## Workflow Diagram
+---
+
+## Workflow 
+
 <p align="center">
   <img src="results/human-germline-variant-calling-pipeline.drawio.png" width="600">
 </p>  
 
+---
+
 ## Discussions
 This project demonstrates implementation of a complete germline variant discovery workflow following GATK Best Practices, from raw FASTQ files to annotated and filtered VCF outputs. Quality control indicated strong mapping performance with 99.66% mapped. Because the input FASTQ files were pre-filtered, the overall coverage rate is lower than standards.  
+
 Future work could include benchmarking against high-confidence truth sets and re-running the pipeline on higher-coverage datasets to compare performance characteristics.
